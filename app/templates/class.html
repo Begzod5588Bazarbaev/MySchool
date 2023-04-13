@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Главное{% endblock title %}
+
+{% block classes %}
+    {% for n in rubric_number %}
+      <li><a class="dropdown-item" href="/classes/{{ n.pk}}" style="text-align:center;">{{ n.name }}</a></li>
+    {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+
+  <h1 style="padding-top:5%;" class="lii">{{ current_rubric.name }} классы:</h1>
+
+  {% for n in klass %}
+    <h3>{{n.class_name}}</h3>
+  {% endfor %}
+
+{% endblock content %}
